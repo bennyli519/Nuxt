@@ -16,6 +16,7 @@
                 </el-col>
             </el-row>
         </section>
+        <el-button type="primary">sadfdsa</el-button>
         <section>语言包：{{$t('home.home_title')}}</section>
     </div>
 </template>
