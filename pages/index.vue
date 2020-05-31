@@ -39,9 +39,9 @@ export default {
     async fetch() {},
     async asyncData({ app, $axios }) {
         console.log(app);
-        console.log(app.$api.market);
+        console.log(app.$api);
         return $axios
-            .post(app.$api.market + '/api/Shared/GetCarouselList', {
+            .post(app.$api.marketApi.GetCarouselList, {
                 PlatformType: 16
             })
             .then((res) => {

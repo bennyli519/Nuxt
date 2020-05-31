@@ -18,7 +18,34 @@ const apiSite = {
     attach: "https://apiattach.likeshuo.com"
 }
 
-export {
+//官网相关api
+const marketApi = {
+    GetCarouselList: '/api/Shared/GetCarouselList',
+}
+
+//attach相关api
+const attachApi = {
+    ShareTranslate: '/api/shared/transleate',
+}
+
+
+
+/**
+ * @param {string} prefix api站点前缀
+ * @param {object} obj 需要格式化对象
+ */
+function formatApi(prefix, obj) {
+    for (let key in obj) {
+        obj[key] = prefix + obj[key]
+        console.log(obj[key])
+    }
+    return obj
+}
+
+export default {
     siteUrl,
-    apiSite
+    apiSite: {
+        marketApi: formatApi(apiSite.market, marketApi),
+        attachApi: formatApi(apiSite.attach, attachApi)
+    }
 }

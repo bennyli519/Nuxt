@@ -35,17 +35,17 @@ export default function ({ $axios, redirect, store }) {
                 const code = parseInt(error.response && error.response.status);
                 switch (code) {
                     case 401:
-                        sessionStorage.clear();
+                        // sessionStorage.clear();
                         redirect('https://passport.likeshuo.com/signin/#/');;
                         console.log(401);
                         break;
                     case 403:
-                        sessionStorage.clear();
+                        // sessionStorage.clear();
                         redirect('https://passport.likeshuo.com/signin/#/');;
                         console.log(403);
                         break;
                     case 404:
-                        sessionStorage.clear();
+                        // sessionStorage.clear();
                         console.log(404);
                         break;
                     case 500:
