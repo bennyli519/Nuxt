@@ -1,4 +1,4 @@
-
+var path = require('path');
 module.exports = {
   mode: 'universal',
   /*
@@ -31,7 +31,8 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/axios',
-    '@/plugins/vue-inject'
+    '@/plugins/vue-inject',
+    '@/plugins/lang'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,7 +45,13 @@ module.exports = {
   modules: [
     // 'axios',
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: '@/assets/css/variables.scss',
+    //  less: './assets/**/*.less'
+    // sass: ...
+  },
   axios: {
     proxy: true, // 表示开启代理
     prefix: '/api', // 表示给请求url加个前缀 /api
@@ -66,6 +73,11 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push()
+      }
+      config.resolve.alias['components'] = path.resolve(__dirname, 'components')
     }
   }
 }

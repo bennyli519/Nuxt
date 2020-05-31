@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/style-resources": "^1.0.0",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "eslint": "^7.0.0",
-    "global": "^4.4.0",
     "koa": "^2.6.2",
-    "lks-tool": "^1.4.21",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-i18n": "^8.18.1"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",

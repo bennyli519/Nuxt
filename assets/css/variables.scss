@@ -1,0 +1,7 @@
+$primary-color:#009887;
+
+
+
+@mixin margin($top:20px,$right:20px,$bottom:20px,$left:20px) {
+    margin: $top $right $bottom $left;
+}

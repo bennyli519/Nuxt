@@ -16,6 +16,7 @@
                 </el-col>
             </el-row>
         </section>
+        <section>语言包：{{$t('home.home_title')}}</section>
     </div>
 </template>
 
@@ -37,6 +38,7 @@ export default {
 
     async fetch() {},
     async asyncData({ app, $axios }) {
+        console.log(app);
         console.log(app.$api.market);
         return $axios
             .post(app.$api.market + '/api/Shared/GetCarouselList', {
@@ -51,7 +53,8 @@ export default {
     },
     created() {},
     mounted() {
-        console.log(this.$test);
+        console.log(this.$t('home.home_title'));
+        // console.log(this.$test);
         console.log(this.$api);
     },
     methods: {
@@ -63,3 +66,8 @@ export default {
     }
 };
 </script>
+<style lang="scss" scoped>
+#reason-wrapper {
+    color: $primary-color;
+}
+</style>
