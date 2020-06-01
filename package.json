@@ -5,10 +5,13 @@
   "author": "Benny",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "cross-env NODE_ENV=development environment=dev nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "generate": "cross-env environment=dev nuxt generate",
+    "generate:group": "cross-env environment=group nuxt generate",
+    "generate:online": "cross-env environment=online nuxt generate",
+    "generate:prod": "cross-env environment=production nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.10.3",

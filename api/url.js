@@ -4,7 +4,10 @@
  * @Date: 2020-05-29 13:57:26
  * @LastEditTime: 2020-05-29 14:26:01
  */
-
+// import config from 'serverConfig'
+// var config = require('serverConfig')
+// console.log(config)
+console.log(process.env.environment)
 
 const siteUrl = {
     LKS_MARKET_SITE: "http://v4.market.lks.com",
