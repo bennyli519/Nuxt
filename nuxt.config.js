@@ -4,15 +4,19 @@ module.exports = {
   env: {
     environment: process.env.environment
   },
+  router: {
+    middleware: 'device'
+  },
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'likeshuo - 立刻说',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'keywords', content: '立刻说，在线英语培训，英语培训机构，网上学英语，网上学英语口语，成人英语口语，外教一对一，在线学英语，在线英语口语，在线英语学习，外教英语，立刻说英语，成人英语培训，英语口语培训，少儿英语培训' },
+      { hid: 'description', name: 'description', content: "立刻说(美联英语),在线英语培训机构,提供外教一对一免费英语口语学习公开课、青少英语、职场英语、雅思托福等出国英语培训,随时随地想学就学,免费试听热线:400-777-8828" }
     ],
     script: [
       { src: '/serverConfig.js' }
@@ -88,12 +92,17 @@ module.exports = {
       // Run ESLint on save
       if (isDev && isClient) {
         config.module.rules.push()
-        config.externals = {
-          serverConfig: ['serverConfig']
-        }
+
       }
       config.resolve.alias['components'] = path.resolve(__dirname, 'components')
-      console.log(config)
+      // config.externals = {
+      //   serverConfig: 'serverConfig'
+      // }
+      // Object.assign(config, {
+      //   externals: {
+      //     serveConfig: "serveConfig"
+      //   }
+      // });
     }
   }
 }

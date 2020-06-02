@@ -16,6 +16,10 @@ export default {
         Banner,
         LksFooter
     }
+    // mounted() {
+    //     let key = this.$route.name;
+    //     document.title = this.$t(`home.${key}`);
+    // }
 };
 </script>
 <style lang="scss">

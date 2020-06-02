@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { indexApi } from '@/api/shared';
 import { mapState, mapMutations } from 'vuex';
 export default {
     data() {
@@ -49,11 +50,12 @@ export default {
                 return {
                     a: res.Rdata
                 };
-                console.log(res);
+                // console.log(res);
             });
     },
     created() {},
     mounted() {
+        console.log($nuxt);
         console.log(this.$t('home.home_title'));
         // console.log(this.$test);
         console.log(this.$api);
