@@ -4,9 +4,9 @@ module.exports = {
   env: {
     environment: process.env.environment
   },
-  router: {
-    middleware: 'device'
-  },
+  // router: {
+  //   middleware: 'device'
+  // },
   /*
   ** Headers of the page
   */
@@ -34,7 +34,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/common.scss',
+    '@/assets/css/reset.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -43,7 +45,7 @@ module.exports = {
     '@/plugins/element-ui',
     '@/plugins/axios',
     '@/plugins/vue-inject',
-    '@/plugins/lang'
+    '@/plugins/lang',
   ],
   /*
   ** Nuxt.js dev-modules

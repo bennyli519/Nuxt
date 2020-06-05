@@ -1,5 +1,4 @@
 export default function ({ $axios, redirect, store }) {
-    console.log($axios)
     // http request 拦截器
     $axios.interceptors.request.use(
         (config) => {

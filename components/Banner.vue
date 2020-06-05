@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Benny
  * @Date: 2020-05-19 17:26:07
- * @LastEditTime: 2020-05-29 11:03:43
+ * @LastEditTime: 2020-06-02 14:28:00
 --> 
 <template>
     <div class="banner">
@@ -89,8 +89,8 @@ export default {
 <style lang="scss" scoped>
 .banner {
     width: 100%;
-    cursor: url('https://ossattachment.likeshuo.com/user/c4e6360f-705d-478a-bf9a-ed5a8284bbe7.png?Expires=1621582843&OSSAccessKeyId=LTAI4G544FLXAcfF3TpYngdx&Signature=lyejc2rMbgrWWp4lmqsSIlF%2F3X0%3D&x-oss-process=style%2Fuser-small'),
-        auto;
+    // cursor: url('https://ossattachment.likeshuo.com/user/c4e6360f-705d-478a-bf9a-ed5a8284bbe7.png?Expires=1621582843&OSSAccessKeyId=LTAI4G544FLXAcfF3TpYngdx&Signature=lyejc2rMbgrWWp4lmqsSIlF%2F3X0%3D&x-oss-process=style%2Fuser-small'),
+    //     auto;
     .img {
         width: 100%;
         height: 100%;

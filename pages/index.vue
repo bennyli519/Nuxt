@@ -17,6 +17,8 @@
             </el-row>
         </section>
         <el-button type="primary">sadfdsa</el-button>
+        <!-- <nuxt-link to="/general">to general</nuxt-link> -->
+        <n-link to="/general" no-prefetch>About page not pre-fetched</n-link>
         <section>语言包：{{$t('home.home_title')}}</section>
     </div>
 </template>
@@ -38,7 +40,9 @@ export default {
         })
     },
 
-    async fetch() {},
+    async fetch({ store, params }) {
+        console.log(store);
+    },
     async asyncData({ app, $axios }) {
         console.log(app);
         console.log(app.$api);
