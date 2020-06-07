@@ -1,28 +1,39 @@
 <template>
     <div>
+        <div class="header">
+            <div class="container header-pan">
+                <div class="h-brand">
+                    <img
+                        class="logo"
+                        src="https://attach.likeshuo.com/Content/Images/other/logo/logo_07.png"
+                        alt="成人英语培训-英语口语培训-在线英语学习-成人英语口语-英语培训机构"
+                    />
+                    <div class="desc">
+                        <p>美联教育成员/美股上市公司</p>
+                        <p>纳斯达克：METX</p>
+                    </div>
+                </div>
+                <div class="h-btn-group">
+                    <el-button type="primary" size="small">注册</el-button>
+                    <el-button size="small">登陆</el-button>
+                </div>
+            </div>
+        </div>
         <el-menu
             :default-active="activeIndex"
             class="el-menu-demo"
             mode="horizontal"
+            background-color="#333d47"
+            text-color="#fff"
+            active-text-color="#fff"
             @select="handleSelect"
         >
-            <el-menu-item index="1">处理中心</el-menu-item>
-            <el-submenu index="2">
-                <template slot="title">我的工作台</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
-                <el-submenu index="2-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="2-4-1">选项1</el-menu-item>
-                    <el-menu-item index="2-4-2">选项2</el-menu-item>
-                    <el-menu-item index="2-4-3">选项3</el-menu-item>
-                </el-submenu>
-            </el-submenu>
-            <el-menu-item index="3" disabled>消息中心</el-menu-item>
-            <el-menu-item index="4">
-                <a href="https://www.ele.me" target="_blank">订单管理</a>
-            </el-menu-item>
+            <div class="container flex">
+                <el-menu-item index="1">首页</el-menu-item>
+                <el-menu-item index="2">成人英语</el-menu-item>
+                <el-menu-item index="3">青少英语</el-menu-item>
+                <el-menu-item index="4">海外英语</el-menu-item>
+            </div>
         </el-menu>
     </div>
 </template>
@@ -42,5 +53,37 @@ export default {
 };
 </script>
 
-<style lang='less'>
+<style lang='scss' scoped>
+.header {
+    // width: 100%;
+    height: 70px;
+    background-color: #fff;
+    .header-pan {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        .h-brand {
+            display: flex;
+            .logo {
+                width: auto;
+                margin-right: 20px;
+            }
+            .desc {
+                font-size: 12px;
+                color: #666;
+            }
+        }
+        .h-btn-group .el-button {
+            width: 80px;
+        }
+    }
+}
+.el-menu-item {
+    // float: left;
+    width: 165px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+}
 </style>
