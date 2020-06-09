@@ -3,7 +3,12 @@
         <section id="reason-wrapper">
             <el-row :gutter="20">
                 <el-col :span="6">
-                    <div class="grid-content bg-purple">{{list}}</div>
+                    <div class="grid-content bg-purple">
+                        <img
+                            src="https://attach.likeshuo.com/Content/Images/Marketing/Home/why1.png"
+                            alt
+                        />
+                    </div>
                 </el-col>
                 <el-col :span="6">
                     <div class="grid-content bg-purple">a{{orderNum}}</div>

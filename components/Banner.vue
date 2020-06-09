@@ -2,16 +2,17 @@
  * @Description: 
  * @Author: Benny
  * @Date: 2020-05-19 17:26:07
- * @LastEditTime: 2020-06-02 14:28:00
+ * @LastEditTime: 2020-06-09 20:37:45
 --> 
 <template>
     <div class="banner">
-        <el-carousel :height="carouselH">
+        <el-carousel v-if="carouselH" :height="carouselH">
             <el-carousel-item v-for="item in imgList" :key="item">
                 <img class="img" :src="item" alt />
                 adsfasdfsdafads
             </el-carousel-item>
         </el-carousel>
+        <div style="height:500px;background:#eee" v-else></div>
     </div>
 </template>
 
@@ -64,11 +65,10 @@ export default {
                 { isNoSign: true }
             )
             .then((res) => {
-                console.log(res);
+                this.cal();
                 return {
                     a: res.Rdata
                 };
-                console.log(res);
             });
         window.onresize = () => {
             this.cal();

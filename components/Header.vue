@@ -20,19 +20,22 @@
             </div>
         </div>
         <el-menu
-            :default-active="activeIndex"
+            :default-active="$route.path"
             class="el-menu-demo"
             mode="horizontal"
             background-color="#333d47"
             text-color="#fff"
             active-text-color="#fff"
             @select="handleSelect"
+            router
         >
             <div class="container flex">
-                <el-menu-item index="1">首页</el-menu-item>
-                <el-menu-item index="2">成人英语</el-menu-item>
-                <el-menu-item index="3">青少英语</el-menu-item>
-                <el-menu-item index="4">海外英语</el-menu-item>
+                <el-menu-item index="/">
+                    <i class="lksfont lks-icon_homepage1"></i> 首页
+                </el-menu-item>
+                <el-menu-item index="/general">成人英语</el-menu-item>
+                <el-menu-item index="/junior">青少英语</el-menu-item>
+                <el-menu-item index="/oversea">海外英语</el-menu-item>
             </div>
         </el-menu>
     </div>
@@ -85,5 +88,8 @@ export default {
     text-align: center;
     height: 44px;
     line-height: 44px;
+    &.is-active {
+        background-color: #2b333c !important;
+    }
 }
 </style>

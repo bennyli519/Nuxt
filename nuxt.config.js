@@ -23,7 +23,8 @@ module.exports = {
       // { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'http://at.alicdn.com/t/font_422351_qwc0qy59ko.css' }
     ]
   },
   /*
@@ -58,6 +59,7 @@ module.exports = {
   modules: [
     // 'axios',
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/style-resources'
   ],
   styleResources: {
