@@ -19,6 +19,16 @@ body{
     color:#666666;
 }
 
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .container{
     padding-right:15px;
     padding-left:15px;

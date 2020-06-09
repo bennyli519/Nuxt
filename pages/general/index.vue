@@ -5,7 +5,14 @@
  * @LastEditTime: 2020-06-02 14:26:41
 --> 
 <template>
-    <div>成人</div>
+    <div class="container">
+        <div class="test">
+            <img
+                src="https://attach.likeshuo.com/Content/Images/Marketing/General/Home/level.png"
+                alt
+            />
+        </div>
+    </div>
 </template>
 
 <script>
@@ -24,5 +31,8 @@ export default {
 };
 </script>
 
-<style lang='less'>
+<style lang='scss' scoped>
+.test {
+    margin-bottom: 50px;
+}
 </style>

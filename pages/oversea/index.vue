@@ -6,13 +6,14 @@
 --> 
 <template>
     <div class="container">
-        <div class="test">
+        <p>海外英语</p>
+        <!-- <div class="test">
             <img
                 class="img-responsive"
                 src="https://attach.likeshuo.com/Content/Images/Marketing/Junior/Home/level.png?v=20200604001"
                 alt
             />
-        </div>
+        </div>-->
     </div>
 </template>
 

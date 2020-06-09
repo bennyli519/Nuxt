@@ -1,5 +1,9 @@
 <template>
     <div class="container">
+        <div class="title-wrapper">
+            <h3 class="title">为什么选择立刻说</h3>
+            <h5 class="subtitle">5大核心优势，10余年专业教育背景，为你的英语学习保驾护航</h5>
+        </div>
         <section id="reason-wrapper">
             <el-row :gutter="20">
                 <el-col :span="6">
@@ -14,7 +18,7 @@
                     <div class="grid-content bg-purple">a{{orderNum}}</div>
                 </el-col>
                 <el-col :span="6">
-                    <div class="grid-content bg-purple">{{test}}</div>
+                    <div class="grid-content bg-purple">{{list}}</div>
                 </el-col>
                 <el-col :span="6">
                     <div class="grid-content bg-purple">{{a}}</div>
@@ -46,11 +50,16 @@ export default {
     },
 
     async fetch({ store, params }) {
-        console.log(store);
+        store.commit('order/add', {
+            text: '321123'
+        });
+        // console.log(store);
+        // console.log('========');
     },
-    async asyncData({ app, $axios }) {
-        console.log(app);
-        console.log(app.$api);
+    async asyncData({ app, $axios, params, error }) {
+        // console.log(app);
+        // console.log(app.$api);
+        // let { data } = await axios.get(`https://my-api/posts/${params.id}`)
         return $axios
             .post(app.$api.marketApi.GetCarouselList, {
                 PlatformType: 16
@@ -60,9 +69,15 @@ export default {
                     a: res.Rdata
                 };
                 // console.log(res);
+            })
+            .catch((e) => {
+                error({ statusCode: 404, message: 'Post not found' });
             });
     },
-    created() {},
+    created() {
+        // console.log(window);
+        // console.log(this);
+    },
     mounted() {
         console.log($nuxt);
         console.log(this.$t('home.home_title'));
@@ -79,7 +94,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.title-wrapper {
+    margin: 100px 0 50px;
+    .title {
+        margin: 0 0 30px 0;
+        text-align: center;
+        line-height: 1.3;
+        font-size: 36px;
+        font-weight: 500;
+        color: $primary-color;
+    }
+    .subtitle {
+        margin: -15px 0 50px 0;
+        text-align: center;
+        line-height: 22px;
+        font-size: 16px;
+        color: #666;
+    }
+}
 #reason-wrapper {
+    margin-bottom: 100px;
     color: $primary-color;
 }
 </style>

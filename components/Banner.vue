@@ -79,8 +79,6 @@ export default {
             let clientW = document.documentElement.clientWidth;
             let ratio = 3.8;
             this.carouselH = clientW / ratio + 'px';
-            console.log(this.carouselH);
-            console.log(document.documentElement.clientWidth);
         }
     }
 };
@@ -88,6 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner {
+    margin-bottom: 50px;
     width: 100%;
     // cursor: url('https://ossattachment.likeshuo.com/user/c4e6360f-705d-478a-bf9a-ed5a8284bbe7.png?Expires=1621582843&OSSAccessKeyId=LTAI4G544FLXAcfF3TpYngdx&Signature=lyejc2rMbgrWWp4lmqsSIlF%2F3X0%3D&x-oss-process=style%2Fuser-small'),
     //     auto;
