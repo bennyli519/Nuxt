@@ -9,10 +9,9 @@
         <el-carousel v-if="carouselH" :height="carouselH">
             <el-carousel-item v-for="item in imgList" :key="item">
                 <img class="img" :src="item" alt />
-                adsfasdfsdafads
             </el-carousel-item>
         </el-carousel>
-        <div style="height:500px;background:#eee" v-else></div>
+        <div v-else style="height:500px;background:#eee"></div>
     </div>
 </template>
 
@@ -28,11 +27,13 @@ export default {
         };
     },
     created() {
-        if (process.client) {
-            this.cal();
-        }
+        // console.log(process);
+        // console.log('==============我是banner');
+        // if (process.client) {
+        //     console.log('===asdfkljashdfkl');
+        //     this.cal();
+        // }
     },
-    created() {},
     mounted() {
         // 如果要在mounted方法中启动它，请确保使用this.$nextTick来调用它，因为$loading可能无法立即使用。
         // this.$nextTick(() => {
@@ -41,21 +42,6 @@ export default {
         //     setTimeout(() => this.$nuxt.$loading.finish(), 500);
         // });
         console.log(this);
-        // this.$http
-        //     .post(
-        //         '/api/Shared/GetCarouselList',
-        //         {
-        //             PlatformType: 16
-        //         },
-        //         { isNoSign: true }
-        //     )
-        //     .then((res) => {
-        //         console.log(res);
-        //         return {
-        //             a: res.Rdata
-        //         };
-        //         console.log(res);
-        //     });
         this.$axios
             .post(
                 '/api/Shared/GetCarouselList',

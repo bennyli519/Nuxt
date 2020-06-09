@@ -77,6 +77,10 @@ export default {
     created() {
         // console.log(window);
         // console.log(this);
+        if (process.client) {
+            console.log('===asdfkljashdfkl');
+            // this.cal();
+        }
     },
     mounted() {
         console.log($nuxt);

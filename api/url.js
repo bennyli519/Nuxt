@@ -7,7 +7,7 @@
 // import config from 'serverConfig'
 // var config = require('serverConfig')
 // console.log(config)
-console.log(process.env.environment)
+// console.log(process.env.environment)
 
 const siteUrl = {
     LKS_MARKET_SITE: "http://v4.market.lks.com",
@@ -40,7 +40,7 @@ const attachApi = {
 function formatApi(prefix, obj) {
     for (let key in obj) {
         obj[key] = prefix + obj[key]
-        console.log(obj[key])
+        // console.log(obj[key])
     }
     return obj
 }
