@@ -7,8 +7,8 @@
 <template>
     <div class="banner">
         <el-carousel v-if="carouselH" :height="carouselH">
-            <el-carousel-item v-for="item in imgList" :key="item">
-                <img class="img" :src="item" alt />
+            <el-carousel-item v-for="(item,index) in imgList" :key="index">
+                <img class="img" :src="item.Image" alt />
             </el-carousel-item>
         </el-carousel>
         <div v-else style="height:500px;background:#eee"></div>
@@ -20,11 +20,20 @@ export default {
     data() {
         return {
             imgList: [
-                'https://ossattachment.likeshuo.com/carousel/o_1e4sn4h3l1p1v14tpd2vgpm1nn4g.jpg?Expires=1621234226&OSSAccessKeyId=LTAIBZJCQccTiSLS&Signature=LbQEO5i99jFGSg87vPY365wLVnQ%3D',
-                'https://ossattachment.likeshuo.com/carousel/o_1e7scg6gsg7h1i0rhm1176n1kmjb.jpg?Expires=1621232947&OSSAccessKeyId=LTAIBZJCQccTiSLS&Signature=0%2FUEl0uo9ZuPb2ebkstxIGkpkmc%3D'
+                // 'https://ossattachment.likeshuo.com/carousel/o_1e4sn4h3l1p1v14tpd2vgpm1nn4g.jpg?Expires=1621234226&OSSAccessKeyId=LTAIBZJCQccTiSLS&Signature=LbQEO5i99jFGSg87vPY365wLVnQ%3D',
+                // 'https://ossattachment.likeshuo.com/carousel/o_1e7scg6gsg7h1i0rhm1176n1kmjb.jpg?Expires=1621232947&OSSAccessKeyId=LTAIBZJCQccTiSLS&Signature=0%2FUEl0uo9ZuPb2ebkstxIGkpkmc%3D'
             ],
             carouselH: ''
         };
+    },
+    watch: {
+        $route: {
+            handler: function(val, oldVal) {
+                this.currentPlineType(val.path);
+            },
+            // 深度观察监听
+            deep: true
+        }
     },
     created() {
         // console.log(process);
@@ -42,25 +51,44 @@ export default {
         //     setTimeout(() => this.$nuxt.$loading.finish(), 500);
         // });
         console.log(this);
-        this.$axios
-            .post(
-                '/api/Shared/GetCarouselList',
-                {
-                    PlatformType: 16
-                },
-                { isNoSign: true }
-            )
-            .then((res) => {
-                this.cal();
-                return {
-                    a: res.Rdata
-                };
-            });
+
         window.onresize = () => {
             this.cal();
         };
+        this.currentPlineType($nuxt.$route.path);
     },
     methods: {
+        /**
+         * @desc:判断当前所在产线(需加缓存，请求太频繁)
+         * @param:{url} 当前路径
+         */
+        currentPlineType(url) {
+            var PlineType = name;
+            PlineType =
+                url.indexOf('general') != -1
+                    ? 1
+                    : url.indexOf('junior') != -1
+                    ? 2
+                    : url.indexOf('oversea') != -1
+                    ? 4
+                    : null;
+            console.log(url);
+            console.log(PlineType);
+
+            this.$axios
+                .post(
+                    this.$api.marketApi.GetCarouselList,
+                    {
+                        PlineType: PlineType,
+                        PlatformType: 16
+                    },
+                    { isNoSign: true }
+                )
+                .then((res) => {
+                    this.cal();
+                    this.imgList = res.Rdata;
+                });
+        },
         cal() {
             let clientW = document.documentElement.clientWidth;
             let ratio = 3.8;

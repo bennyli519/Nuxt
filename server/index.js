@@ -8,7 +8,7 @@ const app = new Koa()
 const config = require('../nuxt.config.js')
 config.dev = app.env !== 'production'
 
-async function start () {
+async function start() {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
 
@@ -30,6 +30,7 @@ async function start () {
     ctx.req.ctx = ctx // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
     nuxt.render(ctx.req, ctx.res)
   })
+
 
   app.listen(port, host)
   consola.ready({

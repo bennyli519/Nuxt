@@ -27,7 +27,7 @@
         </section>
         <el-button type="primary">sadfdsa</el-button>
         <!-- <nuxt-link to="/general">to general</nuxt-link> -->
-        <n-link to="/general" no-prefetch>About page not pre-fetched</n-link>
+        <n-link to="/general" no-prefetch>成人页面不预渲染</n-link>
         <section>语言包：{{$t('home.home_title')}}</section>
     </div>
 </template>
@@ -59,6 +59,7 @@ export default {
     async asyncData({ app, $axios, params, error }) {
         // console.log(app);
         // console.log(app.$api);
+        console.log(app.$api.marketApi.GetCarouselList);
         // let { data } = await axios.get(`https://my-api/posts/${params.id}`)
         return $axios
             .post(app.$api.marketApi.GetCarouselList, {

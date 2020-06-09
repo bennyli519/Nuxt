@@ -16,14 +16,14 @@ const siteUrl = {
 }
 
 const apiSite = {
-    market: "https://apimarket.likeshuo.com",
+    market: "/api",
     passport: "https://apiglobal.likeshuo.com",
     attach: "https://apiattach.likeshuo.com"
 }
 
 //官网相关api
 const marketApi = {
-    GetCarouselList: '/api/Shared/GetCarouselList',
+    GetCarouselList: '/Shared/GetCarouselList',
 }
 
 //attach相关api
